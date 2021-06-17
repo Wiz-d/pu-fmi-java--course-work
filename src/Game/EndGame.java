@@ -62,11 +62,11 @@ public class EndGame {
                 deadBlackUnits++;
         }
 
-        if (deadRedUnits == 1) {
+        if (deadRedUnits == 6) {
             areAllRedUnitsDead = true;
         }
 
-        if (deadBlackUnits == 1) {
+        if (deadBlackUnits == 6) {
             areAllBlackUnitsDead = true;
         }
 
