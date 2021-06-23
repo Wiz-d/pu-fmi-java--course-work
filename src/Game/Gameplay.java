@@ -15,7 +15,7 @@ public class Gameplay {
 
     public static void moveUnit() {
 
-        int selectedUnit = InputOutput.selectPlayerUnit(currentPlayerTeam, "Изберете реда на героя който искате превдижите: ", "Изберете колоната на героя коийто искате да преместите: ");
+        int selectedUnit = InputOutput.selectPlayerUnit(currentPlayerTeam, "Input row of the unit that you want to move: ", "Input col of the unit that you want to move: ");
         int row;
         int col;
 
@@ -79,14 +79,14 @@ public class Gameplay {
 
         enemyTeam = getEnemyTeam();
 
-        int selectedUnitIndex = InputOutput.selectPlayerUnit(currentPlayerTeam, "Изберете ред на вашия герой: ", "Избере колона на вашия герой: ");
+        int selectedUnitIndex = InputOutput.selectPlayerUnit(currentPlayerTeam, "Input row of your chosen hero: ", "Input col of your chosen hero: ");
 
         if (!UnitPlacement.units.get(selectedUnitIndex).isAttackPossible()) {
             System.out.println("Please select the unit that can attack");
             Application.gameLoop();
         }
 
-        int selectedEnemyUnitIndex = InputOutput.selectPlayerUnit(enemyTeam, "Изберете ред на вражески герой: ", "Изберете колона на вражески герой: ");
+        int selectedEnemyUnitIndex = InputOutput.selectPlayerUnit(enemyTeam, "Input row of enemy hero: ", "Input col of enemy hero: ");
         int enemyUnitCurrentHealth = UnitPlacement.units.get(selectedUnitIndex).getHealth();
         String attackSuccess = calculateAttackSuccess(enemyUnitCurrentHealth);
 
@@ -149,8 +149,8 @@ public class Gameplay {
     public static void printCurrentPlayerTurn() {
 
         String phrase = (currentPlayerTeam == TeamEnum.RED)
-                ? "Червените са на ход"
-                : "Черните са на ход";
+                ? "Red team's turn"
+                : "Black team's turn";
         System.out.println(phrase);
 
     }
@@ -159,9 +159,9 @@ public class Gameplay {
     public static void healUnit() {
 
         Random random = new Random();
-        System.out.println("Изберете една от вашите едини за лекуване");
+        System.out.println("Choose the unit that you would like to heal");
 
-        int selectedUnit = InputOutput.selectPlayerUnit(currentPlayerTeam, "Изберете реда на героя който искате да лекувате: ", "Изберете колоната на героя който искате да лекувате: ");
+        int selectedUnit = InputOutput.selectPlayerUnit(currentPlayerTeam, "Input your unit row: ", "Input your unit col: ");
         int pointsHealed = random.nextInt(6);
         int currentUnitHealth = UnitPlacement.units.get(selectedUnit).getHealth();
 
@@ -182,7 +182,7 @@ public class Gameplay {
 
         int extraRoundChance = random.nextInt();
         if (Util.ExtraFunctions.isNumberNonPrime(extraRoundChance)) {
-            System.out.println("Току що спечелихте екстра действие, честито !");
+            System.out.println("You just won an extra action, congratulations !");
             Application.gameLoop();
         }
 

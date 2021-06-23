@@ -7,8 +7,6 @@ import map.MapCreation;
 
 import static Game.Gameplay.currentPlayerTeam;
 
-//Поздрав с песента на NF - Layers
-
 public class Application {
 
 
@@ -58,7 +56,7 @@ public class Application {
     public static void main(String[] args) {
 
         MapCreation.bootstrapMap();
-        System.out.println("Разполагате с 2 героя от всеки клас. Използвайте ги разумно");
+        System.out.println("You have 2 heroes of each class. Use them wisely.");
         UnitPlacement.unitPlacement();
         MapCreation.generateObstacles();
         InputOutput.printField();

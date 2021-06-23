@@ -37,14 +37,14 @@ public class InputOutput {
 
 
         do {
-            System.out.println("Разполагате със следните единици:");
+            System.out.println("You have the following units:");
             if (areKnightsAvailable)
-                System.out.println("(1) Рицар");
+                System.out.println("(1) Knight");
             if (areDwarvesAvailable)
-                System.out.println("(2) Джудже");
+                System.out.println("(2) Dwarf");
             if (areElvesAvailable)
-                System.out.println("(3) Елф");
-            System.out.println("Коя единица искате да поставите:");
+                System.out.println("(3) Elf");
+            System.out.println("Which unit would you like to place? :");
 
             choice = scanner.nextInt();
         } while (choice < 1 || choice > 3);
@@ -82,13 +82,13 @@ public class InputOutput {
         int col;
 
         do {
-            System.out.println("Въведете ред който се намира във валидната територия");
+            System.out.println("Input row that's within valid territory");
             row = scanner.nextInt();
 
         } while (row <= minRow || row >= maxRow);
 
         do {
-            System.out.println("Въведете колона която се намира във валидната територия");
+            System.out.println("Input col that's within valid territory");
             col = scanner.nextInt();
 
         } while (col <= minCol || col >= maxCol);
@@ -108,7 +108,7 @@ public class InputOutput {
         do {
             System.out.println(message1);
             row = scanner.nextInt();
-            System.out.println(message1);
+            System.out.println(message2);
             col = scanner.nextInt();
 
             for (int i = 0; i < UnitPlacement.units.size(); i++) {
@@ -130,9 +130,9 @@ public class InputOutput {
 
         int[] coordinates = new int[2];
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Въведете ред на който искате да преместите избрания герой");
+        System.out.println("Input new row for chosen hero");
         int row = scanner.nextInt();
-        System.out.println("Въведете колона на която искате да преместите избрания герой");
+        System.out.println("Input new col for chosen hero");
         int col = scanner.nextInt();
         coordinates[0] = row;
         coordinates[1] = col;

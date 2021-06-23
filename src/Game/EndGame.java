@@ -77,11 +77,11 @@ public class EndGame {
         String unitName = "";
 
         if (killedUnitSymbol.equals("%"))
-            unitName = "Рицар";
+            unitName = "Knight";
         if (killedUnitSymbol.equals("@"))
-            unitName = "Джуде";
+            unitName = "Dwarf";
         if (killedUnitSymbol.equals("&"))
-            unitName = "Елф";
+            unitName = "Elf";
 
         return unitName;
     }
@@ -101,23 +101,24 @@ public class EndGame {
 
     public static void printEndGameMessage() {
         if (areAllBlackUnitsDead) {
-            System.out.println("Червените спечелиха. Поздравления!");
+            System.out.println("Red won. Congratulations!");
         }
         if (areAllRedUnitsDead) {
-            System.out.println("Черните спечелиха. Поздравления!");
+            System.out.println("Black won. Congratulations!");
         }
 
 
-        System.out.println("Играта е приключила за " + Gameplay.turnCounter + " рунда");
-        System.out.println("Точки на червените: " + Gameplay.redTeamPoints);
-        System.out.println("Точки на черните: " + Gameplay.blackTeamPoints);
+        System.out.println("The game has ended for " + Gameplay.turnCounter + " rounds");
+        System.out.println("Red team points: " + Gameplay.redTeamPoints);
+        System.out.println("Black team points: " + Gameplay.blackTeamPoints);
 
 
-        System.out.println("Убити червени герои в хронологичен ред");
+        System.out.println("Killed red units in chronological order: ");
         printRedDeadUnits();
+        System.out.println("Killed black units in chronological order: ");
         printBlackDeadUnits();
 
-        System.out.println("Aко искате да играете пак натиснете зеленото триъгълниче горе в дясно *намиг* *намиг*");
+        System.out.println("If you want to play again feel free to click the green triangle in the top right :)");
         System.exit(0);
 
     }
